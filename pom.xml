@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.futcraft</groupId>
+    <artifactId>FutcraftPNX</artifactId>
+    <version>1.8.3</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- NOT: PowerNukkitX sürümünü kendi kullandığın build ile eşleştir -->
+        <pnx.version>2.8.0-PN</pnx.version>
+    </properties>
+
+    <repositories>
+        <!-- PowerNukkitX resmi Maven deposu -->
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!--
+          PowerNukkitX API bağımlılığı.
+          Bu ortamda internet erişimi olmadığı için gerçek koordinatlar/sürüm doğrulanamadı.
+          Kendi geliştirme ortamında şu adımı izle:
+          1) https://github.com/PowerNukkitX/PowerNukkitX adresinden güncel sürüm/coordinate bilgisini al
+          2) Aşağıdaki groupId/artifactId/version değerlerini güncelle
+        -->
+        <dependency>
+            <groupId>com.github.PowerNukkitX</groupId>
+            <artifactId>PowerNukkitX</artifactId>
+            <version>${pnx.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+            </resource>
+        </resources>
+    </build>
+</project>
